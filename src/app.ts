@@ -7,7 +7,9 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(["/repositories/:id", "/repositories/:id/like"], validateUuid);
+// app.use(["/repositories/:id", "/repositories/:id/like"], validateUuid);
+app.use("/repositories/:id", validateUuid);
+app.use("/repositories/:id/like", validateUuid);
 
 const repositories: Array<RepositoryData> = [];
 

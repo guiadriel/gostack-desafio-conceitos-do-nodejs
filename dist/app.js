@@ -21,7 +21,9 @@ var ParamValidator_1 = __importDefault(require("./middlewares/ParamValidator"));
 var app = express_1.default();
 app.use(express_1.default.json());
 app.use(cors_1.default());
-app.use(["/repositories/:id", "/repositories/:id/like"], ParamValidator_1.default);
+// app.use(["/repositories/:id", "/repositories/:id/like"], validateUuid);
+app.use("/repositories/:id", ParamValidator_1.default);
+app.use("/repositories/:id/like", ParamValidator_1.default);
 var repositories = [];
 app.get("/repositories", function (request, response) {
     return response.json(repositories);
