@@ -70,7 +70,6 @@ app.post("/repositories/:id/like", function (request, response) {
     }
     var likes = ++repositories[repositoryIndex].likes;
     repositories[repositoryIndex] = __assign(__assign({}, repositories[repositoryIndex]), { likes: likes });
-    console.log(likes);
     return response.json(repositories[repositoryIndex]);
 });
 module.exports = app;
