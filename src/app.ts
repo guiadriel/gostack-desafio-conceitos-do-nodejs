@@ -74,7 +74,7 @@ app.post("/repositories/:id/like", (request, response) => {
     });
   }
   const likes = ++repositories[repositoryIndex].likes;
-  repositories[repositoryIndex] = { ...repositories[repositoryIndex], likes };
+  repositories[repositoryIndex].likes = likes;
   return response.json( repositories[repositoryIndex] );
 });
 

@@ -118,3 +118,7 @@ describe("Repositories", () => {
     await request(app).delete(`/repositories/123`).expect(400);
   });
 });
+
+afterAll(async done => {
+  done();
+});

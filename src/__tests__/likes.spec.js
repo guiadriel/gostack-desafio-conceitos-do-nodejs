@@ -34,3 +34,7 @@ describe("Likes", () => {
       .expect(400);
   });
 });
+
+afterAll(async done => {
+  done();
+});
